@@ -30,6 +30,8 @@ Iterative-Methods/
 
 ### 1. Jacobi Method
 
+Iterative algorithm for determining the solutions of a strictly diagonally dominant system of linear equations. Each diagonal element is solved for, and an approximate value is plugged in. The process is then iterated until it converges.
+
 ```python
 x^{k+1}_i = (b_i - Σ_{j≠i} A_{ij}x^k_j) / A_{ii}
 ```
