@@ -40,6 +40,8 @@ x^{k+1}_i = (b_i - Σ_{j≠i} A_{ij}x^k_j) / A_{ii}
 
 ### 2. Gauss-Seidel Method
 
+Iterative method used to solve a system of linear equations. Though it can be applied to any matrix with non-zero elements on the diagonals, convergence is only guaranteed if the matrix is either strictly diagonally dominant, or symmetric and positive definite.
+
 ```python  
 x^{k+1}_i = (b_i - Σ_{j<i} A_{ij}x^{k+1}_j - Σ_{j>i} A_{ij}x^k_j) / A_{ii}
 ```
@@ -65,6 +67,8 @@ x^{k+1} = x^k - τ_k r^k, where τ_k = ||r^k||^2 / (r^k)^T A r^k
 
 ### 5. Successive Over-Relaxation (SOR)
 
+Successive Over-Relaxation (SOR) is a variant of the Gauss–Seidel method for solving a linear system of equations, resulting in faster convergence. A similar method can be used for any slowly converging iterative process.
+
 ```python
 x^{k+1}_i = (1-ω)x^k_i + ω/A_{ii}[b_i - Σ_{j<i} A_{ij}x^{k+1}_j - Σ_{j>i} A_{ij}x^k_j]
 ```
@@ -72,6 +76,8 @@ x^{k+1}_i = (1-ω)x^k_i + ω/A_{ii}[b_i - Σ_{j<i} A_{ij}x^{k+1}_j - Σ_{j>i} A_
 **Features**: Configurable relaxation parameter ω
 
 ### 6. Symmetric Gauss-Seidel
+
+The same as used in machine learning
 
 **Features**: Forward and backward sweeps for improved convergence on symmetric matrices
 

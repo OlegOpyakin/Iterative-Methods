@@ -44,10 +44,11 @@ class IterativeMethodsSolver:
     
     def _check_diagonal_dominance(self) -> bool:
         """
-        Check if matrix has diagonal dominance (important for Jacobi/GS stability)
+        Check if matrix has diagonal dominance (important for Jacobi/Gauss-Seidel stability)
+        Module of diagonal element must be greater than sum of one element higher and one element lower.
 
         Returns: 
-            bool: Returns True or False, whether matrice is has diagonal
+            bool: Returns True or False, whether matrice is has diagonal stability
         """
         for i in range(self.n):
             diag_val = abs(self.A[i, i])
@@ -154,6 +155,8 @@ class IterativeMethodsSolver:
             List[float] : List of residual norms at each iteration
             int : Number of iterations performed
         """
+        #warnings.warn(f"Max iterations ({self.max_iterations}) reached without convergence")
+
         x = np.zeros(self.n) if x0 is None else x0.copy()
         residual_norms = []
         
