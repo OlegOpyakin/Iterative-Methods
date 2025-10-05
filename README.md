@@ -188,22 +188,3 @@ def create_test_system(n: int = 100, condition_number: float = 100):
 ```bash
 python3 convergence_comparison.py
 ```
-
-## Performance Characteristics
-
-### Method Convergence Properties
-
-| Method | Convergence Rate | Memory | Best Use Case |
-|--------|------------------|---------|---------------|
-| Jacobi | Linear | O(n²) | Parallel implementation |
-| Gauss-Seidel | Linear (faster) | O(n²) | Sequential processing |
-| Simple Iteration | Linear | O(n²) | Simple implementation |
-| Steepest Gradient | Superlinear | O(n²) | SPD matrices |
-| SOR | Linear (optimal ω) | O(n²) | Fine-tuned systems |
-| Symmetric GS | Linear | O(n²) | Symmetric matrices |
-
-### Computational Complexity
-
-- **Time per iteration**: O(n²) for all methods
-- **Space complexity**: O(n²) for matrix storage, O(n) for vectors
-- **Convergence**: Typically 10-200 iterations for well-conditioned systems
